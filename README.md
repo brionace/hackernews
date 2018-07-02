@@ -3,6 +3,8 @@ Created using React/HTML5/CSS3/SASS :+1:
 
 ## How to use
 Clone or Download and simply open _index.html_ in your browser.
+### Browsing
+- Click on new boxes to expand/collapse.
 ## Enhancing user experience
 I added **Load More** to enable paging which helps with usability. More obviously can be done to make the user experience better like: 
 - Adding filters
