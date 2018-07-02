@@ -1,5 +1,5 @@
 # hackernews
-Created using React/HTML5/CSS3/SASS
+Created using React/HTML5/CSS3/SASS :+1:
 ## Compatibility
 Tested on latest Chrome and Safari only
 ## Tests
