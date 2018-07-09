@@ -1,0 +1,163 @@
+//@import "bourbon-neat";
+@import "variables";
+@import "mixins";
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    @include border-box;
+    }
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.header {
+	display: flex;
+	height: 100px;
+    background: #ccc;
+    margin-bottom: 10px;
+	.header__name {
+		margin: 20px auto 0 auto;
+		font-size: 20px;
+		background: #fff;
+		padding: 10px;
+		a{
+			color: #000;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+
+	.header__name:hover {
+		background: transparent;
+	}	
+	
+}
+
+.footer {
+	padding: 10px;
+	margin: 10px 0;
+	font-size: 11px;
+	text-align: center;
+}
+
+.app__container {
+	max-width: 90%;
+	margin: 0 auto;	
+}
+
+.loading {
+	text-align: center;
+	margin: 20px 0;
+}
+
+.articles {
+	@extend %clearfix;
+	@include grid(100%);
+	
+
+		@media (min-width: $breakpoint-mobile) {
+			@include grid(33.3333333%);
+		}
+	
+		@media (min-width: $breakpoint-tablet) {
+			@include grid(25%);
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+			@include grid(15%);
+		}	
+	
+	
+	
+	.article {
+		position: relative;	
+		height: 200px;
+		
+		.article__score{
+			position: absolute;
+			font-size: 12px;
+			top: 10px;
+			left: 10px;
+			text-align: center;
+			z-index: 1;
+			color: indianred;
+			
+			img{
+				display: block;
+				margin-bottom: 5px;
+			}
+		}		
+		
+		.article__wrapper{
+			position: relative;
+			width: 100%;
+			background-color: #e6e6e6;
+			padding: 10px 10px 10px 40px;
+			height: 100%;
+			overflow: hidden;
+			
+			.article__title {
+				font-size: 14px;
+				:hover{
+					cursor: pointer;
+				}				
+			}
+			.article__author{
+				color:#737070;
+				display: inline-block;
+				white-space: nowrap;	
+				font-size: 10px;
+			}		
+			.article__content{ 
+				margin-top: 10px; 
+			}	
+			.article__externalUrl{
+				font-size: 10px;
+			}
+		}		
+		
+	}
+
+	.active{
+		
+		height: 410px;		
+		
+		@include grid__active(1);	
+		
+		@media (min-width: $breakpoint-mobile) {
+			@include grid__active(2);
+		}
+	
+		@media (min-width: $breakpoint-tablet) {
+			@include grid__active(2);
+		}
+
+		@media (min-width: $breakpoint-desktop) {
+			@include grid__active(2);
+		}	
+	
+				
+		.article__wrapper{
+			background-color: #e6cea1;
+			overflow: auto;
+		}
+
+	}	
+	
+}
+
+.articles-more{
+	background: #e6e6e6;
+    padding: 10px;
+	margin-top: 10px;
+    text-align: center;
+	
+	.articles-more__button{
+		padding: 10px 40px;
+		background: #e6e6e6;
+		font-size: 20px;		
+	}
+}
